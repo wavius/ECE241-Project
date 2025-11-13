@@ -40,7 +40,7 @@ module audio_generator (Clock, nStart, Select, Out);
 		begin
 			if (Select[j]) amplitude_sum = amplitude_sum + amplitude[j];
 		end
-		if (sum != 0) Out <= amplitude_sum / sum;
+		if (sum != 0) Out <= amplitude_sum >>> 1;
 		else Out <= 0;
 	end
 endmodule
